@@ -5,7 +5,7 @@ Algorithms:
 - Knuth-Morris-Pratt algorithm for prefix function
 - Mo's algorithm
 
-Graph Dlgorithms:
+Graph Algorithms:
 - Depth-first search
 - Breadth-first search
 - Dijsktra's algorithm for SSSP
@@ -24,3 +24,4 @@ Data structures:
 - Trie
 - Implicit segment tree
 - Ordered set
+- CHT trick + Line container
