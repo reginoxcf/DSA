@@ -3,6 +3,7 @@ Algorithms:
 - Heavy-light decomposition
 - Karatsuba's algorithm for bignumber multiplication
 - Knuth-Morris-Pratt algorithm for prefix function
+- Matrix operations
 - Mo's algorithm
 
 Graph Algorithms:
