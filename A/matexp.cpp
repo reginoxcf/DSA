@@ -1,3 +1,5 @@
+const ll MOD = 1e9+7;
+
 vector<vector<ll>> mmul(vector<vector<ll>> a, vector<vector<ll>> b){
     vector<vector<ll>> c;
     c.resize(a.size(), vector<ll>(b[0].size()));
