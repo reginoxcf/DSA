@@ -7,6 +7,7 @@ Algorithms:
 - Mo's algorithm
 
 Graph Algorithms:
+- 2-SAT
 - Depth-first search
 - Breadth-first search
 - Dijsktra's algorithm for SSSP
