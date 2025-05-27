@@ -1,6 +1,6 @@
 const ll MOD = 1e9+7;
 
-vector<vector<ll>> mmul(vector<vector<ll>> a, vector<vector<ll>> b){
+vector<vector<ll>> mmul(const vector<vector<ll>> &a, const vector<vector<ll>> &b){
     vector<vector<ll>> c;
     c.resize(a.size(), vector<ll>(b[0].size()));
     for(int i = 0; i < a.size(); i++){
@@ -14,7 +14,7 @@ vector<vector<ll>> mmul(vector<vector<ll>> a, vector<vector<ll>> b){
 }
 
 vector<vector<ll>> mpow(vector<vector<ll>> b, ll m){
-    vector<vector<ll>> res = b;
+    vector<vector<ll>> res = b; 
     for(int i = 0; i < res.size(); i++){
         for(int j = 0; j < res[i].size(); j++){
             if(i == j) res[i][j] = 1;
