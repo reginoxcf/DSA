@@ -1,15 +1,15 @@
 # CONTENTS
 Algorithms:
-- Heavy-light decomposition
+- HLD
 - Karatsuba's algorithm for bignumber multiplication
-- Knuth-Morris-Pratt algorithm for prefix function
+- KMP (prefix function)
 - Matrix operations
 - Mo's algorithm
 
 Graph Algorithms:
 - 2-SAT
-- Depth-first search
-- Breadth-first search
+- DFS
+- BFS
 - Dijsktra's algorithm for SSSP
 - Dinic's algorithm for min cut/max flow
 - LCA using binary lifting
@@ -18,7 +18,7 @@ Graph Algorithms:
 - Topological sort
 
 Data structures:
-- Disjoint-set union
+- DSU
 - DSU Tree
 - 1D / 2D Fenwick tree
 - 1D / 2D Segment tree
@@ -26,4 +26,5 @@ Data structures:
 - Trie
 - Implicit segment tree
 - Ordered set
-- CHT trick + Line container
+- CHT
+- Line container (Li Chao tree)

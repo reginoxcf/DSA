@@ -1,3 +1,4 @@
+//source: cpalgo
 struct TwoSatSolver {
     int n_vars;
     int n_vertices;
@@ -52,7 +53,6 @@ struct TwoSatSolver {
 
     void add_disjunction(int a, bool na, int b, bool nb) {
         // na and nb signify whether a and b are to be negated
-        // cout << "row: " << a << " " << "col: " < b-n << " " << na << " " << nb << "\n"; 
         a = 2 * a ^ na;
         b = 2 * b ^ nb;
         int neg_a = a ^ 1;
