@@ -1,42 +1,53 @@
-struct LazyST{
-  int n;
-  vector<pair<int,int>> t;
-  void resize(int n){
-    this->n = n;
-    t.resize(n*4+3);
-    fill(all(t), make_pair(0, 0));
-  }
-  void push(int id){
-    int &x = t[id].second;
-    t[id*2].first += x;
-    t[id*2+1].first += x;
-    t[id*2].second += x;
-    t[id*2+1].second += x;
-    x = 0;
-  }
-  void update(int id, int l, int r, int L, int R, int v){
-    if(L > r || R < l) return;
-    if(L <= l && r <= R){
-      t[id].first += v;
-      t[id].second += v;
-      return;
+struct node{
+    //define node here
+    explicit node(){
+
     }
-    push(id);
-    update(id*2, l, (l+r)/2, L, R, v);
-    update(id*2+1, (l+r+2)/2, r, L, R, v);
-    t[id].first = min(t[id*2].first, t[id*2+1].first);
-  }
-  int get(int id, int l, int r, int L, int R){
-    if(L > r || R < l) return 1e9;
-    if(L <= l && r <= R) return t[id].first;
-    push(id);
-    int mid = (l+r)/2;
-    return min(get(id*2, l, mid, L, R), get(id*2+1, mid+1, r, L, R));
-  }
-  void print(int id, int L, int R){
-    cout << L << " " << R << " " << t[id].first << "\n";
-    if(L==R) return ;
-    print(id*2, L, (L+R)/2);
-    print(id*2+1, (L+R+2)/2, R);
-  }
+
+    node operator+(const node &o) const{
+        return node();
+    };
+};
+
+struct Lazy{
+    //todo: write apply function, clear lazy function
+    vector<node> tree, lazy;
+    void resize(int n){
+        tree.assign(n<<2+3, node());
+        lazy.assign(n<<2+3, node());
+    }
+
+    void apply(int id, int len, node add){
+        //do something (both tree and lazy)
+    }
+    
+    void push(int id, int l, int r){
+        int mid = (l+r)/2;
+        apply(id << 1, mid - l + 1, lazy[id]);
+        apply(id << 1 | 1, r - mid, lazy[id]);
+        //clear lazy
+    }
+
+    void update(int id, int l, int r, int u, int v, node tmp){
+        if(v < l || r < u) return ;
+        if(u <= l && r <= v){
+            apply(id, r-l+1, tmp);
+            return ;
+        }
+        push(id, l, r);
+        int mid = (l+r)/2;
+        update(id<<1, l, mid, u, v, tmp);
+        update(id<<1|1, mid+1, r, u, v, tmp);
+        tree[id] = tree[id<<1] + tree[id<<1|1];
+    }
+    
+    node get(int id, int l, int r, int u, int v){
+        if(v < l || r < u) return ;
+        if(u <= l && r <= v) return tree[id];
+        push(id, l, r);
+        int mid = (l+r)/2;
+        node lf = get(id<<1, l, mid, u, v);
+        node rg = get(id<<1|1, mid+1, r, u, v);
+        return lf + rg;
+    }
 };
