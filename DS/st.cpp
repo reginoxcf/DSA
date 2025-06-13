@@ -1,7 +1,7 @@
 struct node{
     //define node here
-    long long x;
-    explicit node(long long _x = 0){
+
+    explicit node(){
 
     }
 
