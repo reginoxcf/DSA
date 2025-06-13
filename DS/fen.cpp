@@ -2,8 +2,11 @@ struct Fenwick{
 	int n; vector<vector<ll>> t;
 	Fenwick(int n){
 		this->n = n;
-		t.resize(n+1, vector<ll>(2, 0));
+		t.assign(n+1, vector<ll>(2, 0));
 	}
+    void ass(int n){
+        t.assign(n+1, vector<ll>(2, 0));
+    }
 	void upd(int tp, int id, ll x){
 		for(int i = id; i <= n; i+=i&(-i)) t[i][tp]+=x;
 	}
