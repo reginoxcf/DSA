@@ -13,9 +13,9 @@ struct DSU{
 		if(lab[u] < 0) return u;
 		return lab[u] = find(lab[u]);
 	}
-    bool same(int u, int v){
-        return find(u) == find(v);
-    }
+	bool same(int u, int v){
+		return find(u) == find(v);
+	}
 	void join(int u, int v){
 		u = find(u), v = find(v);
 		if(u == v) return;
