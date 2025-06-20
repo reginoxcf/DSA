@@ -1,3 +1,6 @@
+using cd = complex<long double>;
+const long double PI = acos(-1);
+
 void fft(vector<cd> &a, bool invert) {
     int n = a.size(), L = __builtin_ctz(n);
     vector<int> rev(n);
