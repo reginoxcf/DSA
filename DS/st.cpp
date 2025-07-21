@@ -27,7 +27,7 @@ struct SegTree{
         tree[id] = tree[id<<1] + tree[id<<1|1];
     }
     node get(int id, int l, int r, int u, int v){
-        if(r < u || v < l) return node(0);
+        if(r < u || v < l) return node();
         if(u <= l && r <= v) return tree[id];
         int mid = l + (r-l)/2;
         node lf = get(id<<1, l, mid, u, v);
