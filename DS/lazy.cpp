@@ -42,7 +42,7 @@ struct Lazy{
     }
     
     node get(int id, int l, int r, int u, int v){
-        if(v < l || r < u) return ;
+        if(v < l || r < u) return node();
         if(u <= l && r <= v) return tree[id];
         push(id, l, r);
         int mid = (l+r)/2;
