@@ -1,6 +1,7 @@
 struct Fenwick{
 	int n; vector<vector<ll>> t;
-    void resize(int n){
+    void resize(int _n){
+		n = _n;
         t.assign(n+1, vector<ll>(2, 0));
     }
 	void upd(int tp, int id, ll x){
