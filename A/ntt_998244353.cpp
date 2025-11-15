@@ -42,7 +42,7 @@ void ntt(vector<int>& a, bool invert){
 }
  
 vector<int> multiply(vector<int> const& a, vector<int> const& b){
-    int sus = a.size() + b.size() - 1;
+    int sz = a.size() + b.size() - 1;
     vector<int> fa(a.begin(),a.end()), fb(b.begin(),b.end());
     int n = 1;
     while (n < a.size() + b.size()){
@@ -55,7 +55,7 @@ vector<int> multiply(vector<int> const& a, vector<int> const& b){
     }
     ntt(fa, 1);
 
-    while(fa.size() > sus) fa.pop_back();
+    while(fa.size() > sz) fa.pop_back();
  
     return fa;
 }
