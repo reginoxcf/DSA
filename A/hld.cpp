@@ -30,7 +30,7 @@ struct HLD{
       sp[v][0] = u;
       dfs_sz(v, u);
       sz[u] += sz[v]; 
-      if(sz[v] > sz[g[u][0]]) swap(g[u][0], v);
+      if(sz[v] > sz[g[u][0]] || g[u][0] == p) swap(g[u][0], v);
     }
   }
 
